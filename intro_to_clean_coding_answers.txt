@@ -1,0 +1,125 @@
+1. In your own words, explain what clean code is and why it is important.
+
+Clean code is a simple code which is easy to read and use. It is important to keep a code clean especially when you work in a team over a complex applications, when each developer should easily read, understand your code and reuse it if needed.
+
+2. There may be a lot of consequences if code is not created to an acceptable standard. For example, the big issue can arise to online banking. I website code is having some bugs, bank customers will lose their money and other sensitive personal information.
+
+3. The following code is not clean. It is complicated and function and var names don't show what code actually does. Refactored code:
+FUNCTION toCelsius(fahrenheit)
+ const tempF = fahrenheit;
+ const FtoC = (tempF−32) * (5/9)
+ PRINT FtoC
+
+FUNCTION toFarenheit(celsius)
+ const tempC = celsius;
+ const CtoF = tempC * 1.8000 + 32.00
+ PRINT CtoF
+
+ 4. The code is not clear because too much unclear wording. Refactored:
+ FUNCTION calcPercent(sum, total)
+ IF (total = 0) THEN
+   PRINT "Sorry, cannot divide by 0"
+ ELSE
+   SET percentage to sum / total * 100
+ END IF
+ PRINT percentage
+END FUNCTION
+
+5.
+a) FUNCTION getPaymentCash(cash)
+       CALL getPayment
+       RETURN amount
+       PRINT "Change due: " + amount - subTotal * discountRate + (subTotal * tax)
+END FUNCTION
+
+FUNCTION getPaymentCredit(creditCard)
+       CALL getPayment
+       RETURN amount
+       PRINT "Your credit card has been charged: " + subTotal * discountRate + (subTotal * tax)
+END FUNCTION
+
+b) FUNCTION checkoutBook(book, guest)
+ IF guest.accountActive AND guest.outstandingFees = 0 AND IF NOT(guest.hasOverdueBooks) THEN
+           APPEND book to guest.books
+           SET book.status to "Checked Out"
+           PRINT "Your books have been issued."
+ ELSE
+     PRINT "Unable to check out book."
+ END IF
+END FUNCTION
+
+c) CLASS BankAccount
+
+ FUNCTION displayBalance
+    PRINT balance
+ END FUNCTION
+END CLASS
+
+CLASS Deposit
+
+ FUNCTION deposit(amount)
+    SET balance to balance + amount
+ END FUNCTION
+END CLASS
+
+CLASS Withdraw
+
+ FUNCTION withdraw(amount)
+     IF balance > amount THEN
+       SET balance to balance - amount
+     END
+ END FUNCTION
+END CLASS
+
+CLASS creditCard
+
+ FUNCTION creditCardOffer
+     IF NOT(customer.hasCreditCard) THEN
+         CALL offerCreditCard
+     END
+ END FUNCTION
+END CLASS
+
+CLASS status
+
+ FUNCTION checkStatus
+     IF NOT(customer.hasCheckingAccount) THEN
+         CALL offerCheckingAccount
+     END
+ END FUNCTION
+END CLASS
+ ....
+ ....
+ ....
+
+END
+
+Programming Questions
+
+6. Square
+function calculate(arr){
+const sum = arr.reduce((total, amount) => total + amount);
+var root = Math.sqrt(sum)
+if (Math.round(sum) === sum){
+  return root
+  }
+else {
+return sum
+}
+}
+
+7. Duplicate
+function checkForDuplicate(array)
+    {
+        for (var i = 0; i < array.length; i++)
+        {
+            for (var j = i+1; j < array.length; j++)
+            {
+                    if (array[i] == array[j])
+                    {
+                        return true;
+                    }
+            }
+        }
+        return false;
+    }
