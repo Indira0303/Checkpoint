@@ -98,28 +98,24 @@ Programming Questions
 
 6. Square
 function calculate(arr){
-const sum = arr.reduce((total, amount) => total + amount);
-var root = Math.sqrt(sum)
-if (Math.round(sum) === sum){
-  return root
-  }
-else {
-return sum
-}
+ const sum = arr.reduce((total, amount) => total + amount);
+ var root = Math.sqrt(sum)
+  if (Math.round(sum) === sum){
+   return root
+   }
+  else {
+  return sum
+ }
 }
 
 7. Duplicate
-function checkForDuplicate(array)
-    {
-        for (var i = 0; i < array.length; i++)
-        {
-            for (var j = i+1; j < array.length; j++)
-            {
-                    if (array[i] == array[j])
-                    {
-                        return true;
-                    }
-            }
-        }
-        return false;
+function checkForDuplicate(array){
+ for (var i = 0; i < array.length; i++){
+  for (var j = i+1; j < array.length; j++){
+    if (array[i] == array[j]){
+      return true;
+      }
     }
+  }
+  return false;
+}
