@@ -1,0 +1,13 @@
+var line = ["Vivian", "Ava", "Josh", "Patrick", "Mike"];
+line.push("Mary");
+line.indexOf ("Josh"); //returns 2
+line.indexOf ("Emily"); //returns -1
+line.splice(1, 0, "Melissa");
+line.splice(3, 1)
+
+Provide another real-world example that you can model using a data structure.
+
+Another real-world example that I can model using a data-structure is online invitation for a party - where you have an array of guest, some will change their mind and will not be able to come, others will bring some friend, etc and so the data will be keep modifying.
+
+How would your data structure allow developers to access and manipulate the data?
+Since data is changing constantly it is very important for developers to organize a right data structure so that they would be able to access and manipulate data anytime. So before deciding on what data structure to use, it  is important to think about what kind of data will be used and how it may change. For example, if it is an array, we can use different functions to add, delete, replace elements. 
