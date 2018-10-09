@@ -1,0 +1,45 @@
+1. What is the main difference between a stack and a queue?
+
+Stack follows the LIFO method, that means element which was added at the end will be taken out first. It uses 2 operations at only one end: push (adds elements) and pop (removes recently added element).
+Queue follows the FIFO method and it is open on both ends. One end is used to add data and the other one to remove it. The data which was added first will be removed first.
+
+2. What are the similarities between stacks and queues?
+
+Stack and queue are both abstract linear data structures, and both can be used to store data.
+
+3. Imagine you are an engineer tasked with implementing the UNDO and REDO options in a word processor such as Microsoft Word. Which data structure would you use for each option and why?
+For UNDO option in a word processor I would use LIFO method - stack - because when you undo some typing, the last typed letter will be removed.
+For REDO option I would use FIFO method because if some text should be re-done you will check it from beginning and revise.
+
+
+Programming Questions
+
+1. Given a string, reverse it using a stack. For example, the string "Bloc!" should be converted to "!colB".
+FUNCTION REVERSE(original)
+  INIT a new stack
+  FOR each character in original
+    CALL stack.push WITH character
+  END FOR
+  INIT reversed to empty string
+  WHILE stack is not empty
+    CALL stack.pop RETURNING character
+    APPEND character to reversed
+  END WHILE
+  RETURN reversed
+END FUNCTION
+
+function reverse(string){
+ var stack = new Stack();
+ for(i=0; i < string.lentgth; i++){
+  stack.push(string[i])
+ }
+ var reversed = '';
+ while ( stack.length > 0 ) {
+  reversed += stack.pop()
+ }
+ return reversed;
+}
+
+reverse("Bloc!") // returns "!cloB"
+
+2. Implement the pop method of a stack using one queue. Make a FIFO data structure mirror the functionality of a LIFO data structure. Since the internal list is not the same as defined in the checkpoint, it may help to rewrite the pseudocode first.
