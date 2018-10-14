@@ -1,0 +1,50 @@
+1. What are some pros and cons of using linked lists instead of arrays?
+As arrays grow larger they require more physical memory space to make room for them, and linked lists are not stored next to each other in memory, so OS may use any available memory location to store it.. However, since indexing is not possible in a linked list, to find an element the program must search from the beginning in order.
+
+2.  Come up with a real world example of a linked list.
+Real world example of a linked list is a Train, where there is a sequence of coaches and each one is connected to another like a node values.
+
+3. The linked list push function should take a value, create a node, and add it to the end of a list. Below is pseudocode for a push function for a singly linked list. However, there is something wrong with it. Submit both an explanation of the bug and a functional implementation of the method.
+FUNCTION push(element)
+CREATE node
+SET node.value TO element
+SET node.next TO null
+
+IF the head node does not exist -> Should be if the head node is empty (==null)
+ THEN SET head to node
+ELSE
+ SET current to head
+ WHILE current.next is not equal to null  -> We should iterate to the end of the list
+ SET current to current.next
+ SET current.next to node
+END IF
+END FUNCTION
+
+4. Given an unsorted singly linked list, remove all duplicates from the linked list.
+removeDuplicates: function() {
+        prev = this.head;
+        current = this.head.next;
+        hash = {};
+        while(current != null) {
+            if(!hash[current.data]) {
+                hash[current.data] = true;
+            } else {
+                prev.next = current.next;
+                this._size--;
+            }
+            prev = current;
+            current = current.next;
+        }
+    }
+
+5. Given an unsorted singly linked list, reverse it.
+
+while(currNode!=null){
+			nextNode = currNode.next;
+			currNode.next = prevNode;
+			prevNode = currNode;
+			currNode = nextNode;
+		}
+		head = prevNode;
+		display(head);
+	}
